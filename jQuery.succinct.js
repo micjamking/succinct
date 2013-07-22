@@ -8,14 +8,33 @@
  */
  
  (function(){
- 	$.fn.succinct = function(options){
+ 	$.fn.succinct = function(length){
  		
- 		var defaults = {};
- 		
- 		var options = $.extend(defaults, options);
+ 		var defaults = 240,
+			length = $.extend(defaults, length);
  		
  		return this.each(function(){
- 		
+ 			
+ 			var textDefault, 
+ 				textTruncated,
+ 				elements = $(this);
+ 			
+ 			var truncate = function(){
+	 			elements.each(function(){
+					textDefault = $(this).text();
+	
+					if (textDefault.length > options) {
+						textTruncated = text.trim().substring(0, length).split(' ').slice(0, -1).join(' ') + '...';
+						$(this).text(textTruncated);
+					}
+				});
+ 			}
+			
+			var init = function() {
+				truncate();
+			}
+			
+			init();
  		});
  	};
  })(jQuery);
