@@ -23,7 +23,7 @@
 	 			elements.each(function(){
 					textDefault = $(this).text();
 	
-					if (textDefault.length > options) {
+					if (textDefault.length > length) {
 						textTruncated = text.trim().substring(0, length).split(' ').slice(0, -1).join(' ') + '...';
 						$(this).text(textTruncated);
 					}
