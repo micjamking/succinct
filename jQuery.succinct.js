@@ -1,40 +1,48 @@
 /*
  * Copyright (c) 2013 Mike King (@micjamking)
- * 
+ *
  * jQuery Succinct plugin
  * Version 1.0 (July 2013)
  *
  * Licensed under the MIT License
  */
- 
- (function(){
- 	$.fn.succinct = function(length){
- 		
- 		var defaults = 240,
-			length = $.extend(defaults, length);
- 		
- 		return this.each(function(){
- 			
- 			var textDefault, 
- 				textTruncated,
- 				elements = $(this);
- 			
- 			var truncate = function(){
-	 			elements.each(function(){
+
+ /*global jQuery*/
+'use strict';
+
+(function($){
+	$.fn.succinct = function(size){
+
+		var defaults = {
+				size: 240
+			},
+			options = $.extend(defaults, size);
+
+		return this.each(function(){
+
+			var textDefault,
+				textTruncated,
+				elements = $(this);
+
+			var truncate = function(){
+
+				elements.each(function(){
 					textDefault = $(this).text();
-	
-					if (textDefault.length > options) {
-						textTruncated = text.trim().substring(0, length).split(' ').slice(0, -1).join(' ') + '...';
+
+					if (textDefault.length > options.size) {
+						textTruncated = textDefault.trim().
+										substring(0, options.size).split(' ').
+										slice(0, -1).join(' ') + '...';
 						$(this).text(textTruncated);
 					}
 				});
- 			}
-			
+			};
+
 			var init = function() {
 				truncate();
-			}
-			
+			};
+
 			init();
- 		});
- 	};
- })(jQuery);
+		});
+	};
+})(jQuery);
