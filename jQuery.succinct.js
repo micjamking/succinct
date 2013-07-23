@@ -33,6 +33,7 @@
 						textTruncated = textDefault.trim().
 										substring(0, options.size).split(' ').
 										slice(0, -1).join(' ') + '...';
+
 						$(this).text(textTruncated);
 					}
 				});
