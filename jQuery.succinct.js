@@ -30,7 +30,7 @@
 					textDefault = $(this).text();
 
 					if (textDefault.length > options.size) {
-						textTruncated = textDefault.trim().
+						textTruncated = $.trim(textDefault).
 										substring(0, options.size).split(' ').
 										slice(0, -1).join(' ') + '...';
 
