@@ -30,4 +30,4 @@ By default, the plugin truncates text to 240 characters.
 * If you have any suggestions, comments, or creative insults for my code, [add an issue](https://github.com/micjamking/Navigataur/issues/new) or [fork the repo](https://github.com/micjamking/Navigataur/fork_select).
 
 ###Copyright
-[BSD license](http://opensource.org/licenses/bsd-license.php) Copyright (c) 2013 Mike King ([@micjamking](http://twitter.com/micjamking))
+[MIT license](http://opensource.org/licenses/MIT) Copyright (c) 2013 Mike King ([@micjamking](http://twitter.com/micjamking))
