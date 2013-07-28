@@ -1,7 +1,7 @@
 Succinct
 ========
 
-*A jQuery plugin for truncating multiple lines of text*
+*A *tiny jQuery plugin for truncating multiple lines of text*
 
 ##How does it work?
 Succinct shortens your text to a specified size, and then adds an ellipsis to the end.
