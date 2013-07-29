@@ -1,61 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="color">
 <head>
 	<title>Succinct: A tiny jQuery plugin for truncating multiple lines of text</title>
 
 	<meta charset="UTF-8" />
-	<meta name="author" content="Mike King" />
   	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-	<meta name="description" content="Succinct is a tiny jQuery plugin for truncating multiple lines of text." />
 	<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+
+	<meta name="author" content="Mike King" />
+	<meta name="description" content="Succinct is a tiny jQuery plugin for truncating multiple lines of text." />
 	<meta name="keywords" content="jQuery, javascript, html, code, plugin, snippet, text, copy, truncate, shorten, succinct, multiple lines, ellipsis" />
 
 	<link rel="author" href="https://plus.google.com/112398162809101288990/posts" />
 	<link rel="publisher" href="https://plus.google.com/u/0/112398162809101288990/posts" />
+
 	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css" />
 	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300|Nosifer">
 
 	<style type="text/css">
-		*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}html{border-top:5px solid #4fa896;background-image:repeating-linear-gradient(-45deg,transparent 25%,rgba(0,0,0,0.0175) 25%,rgba(0,0,0,0.0175) 50%,transparent 50%,transparent 75%,rgba(0,0,0,0.0175) 75%);background-size:2em 2em;background-attachment:fixed;font-family:'Open Sans',sans-serif;font-size:.875em;line-height:1.5}header{text-align:center;}h1,h2,h3,h4,h5,h6{font-weight:300;color:#4fa896}h1{font-size:4.5em;letter-spacing:1px}h2{font-size:2em;margin:1.5em 0 0}a{text-decoration:none;color:#418b7c}a:hover{color:#4fa896}a,input[type="submit"],input[type="text"],.button{border:0;border-radius:2px;-webkit-transition:all .25s ease;-moz-transition:all .25s ease;-ms-transition:all .25s ease;-o-transition:all .25s ease;transition:all .25s ease;-webkit-appearance: none}input[type="submit"],.button{width:100%;display:block;padding:.5em;margin:0 0 .5em;background-color:#4fa896;font-size:1.5em;font-weight:300;color:#418b7c;text-align:center}input[type="submit"]:hover,input[type="submit"]:focus,.button:hover,.button:focus{background-color:#418b7c;color:#fff}.button:active{-webkit-transform:translate(0,5px);-moz-transform:translate(0,5px);-ms-transform:translate(0,5px);-o-transform:translate(0,5px);transform:translate(0,5px)}hr{border-color:rgba(0,255,203,0.75);border-width:1px 0 0 0}p,li{font-size:.875em}pre,code{border-radius:2px;border:1px solid #ddd;background-color:rgba(248,248,248,0.8)}pre{padding:.75em 1em;font-size:.8125em;line-height:1.1875em;overflow:auto;margin:2em 0}code{margin:0 .125em;padding:0 .3125em;white-space:nowrap}form{position:relative;margin:1em 0}input[type="text"]{border:1px solid #ddd;background-color:rgba(248,248,248,0.8);padding:.5em;padding-right:27%;width:100%}input[type="text"]:focus{outline:0;border-color:transparent;box-shadow:0 0 5px #3bc4a8;background-color:rgba(255,255,255,0.8)}input[type="text"]:focus+input[type="submit"]{border-color:white}input[type="submit"]{border-radius:0 2px 2px 0;width:25%;height: 100%;margin:0;position:absolute;top:0;right:0;outline:0;border:1px solid #ddd;border-width:1px 1px 1px 0;font-size:1em}.container{max-width:38em;padding:0 2em;margin:0 auto 5em}.links{margin:3em auto 0;text-align:center}.selector{color:#d55061}.keyword{color:#007fc9}.value{color:#009e73}.library{color:#e6ca00}.error{color:#d14}.truncate{position:relative;color:#888;margin:6em 0;font-style:italic}.truncate:before,.truncate:after{position:absolute;display:block;font-size:10em;font-family:'Nosifer',cursive;color:rgba(136,136,136,0.25)}.truncate:before{top:-0.75em;left:-0.15em;content:'\201C'}.truncate:after{bottom:-1.3em;right:.15em;content:'\201D'}footer>p{font-size:0.75em;text-align:center;}@media only screen and (min-width:542px){html{font-size:1em}.button{width:40%;display:inline-block;margin:0 .5em}}
+		*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.color{background-color:#4ea695;background-color:hsl(168,36%,48%);color:#4ea695;color:hsl(168,36%,48%);border-color:#4ea695;border-color:hsl(168,36%,48%)}.color-light{border-color:#3fbfa5;border-color:hsla(168,100%,48%,0.75)}html{border-top-width:5px;border-top-style:solid;background-image:repeating-linear-gradient(-45deg,transparent 25%,rgba(0,0,0,0.0175) 25%,rgba(0,0,0,0.0175) 50%,transparent 50%,transparent 75%,rgba(0,0,0,0.0175) 75%);background-size:2em 2em;background-attachment:fixed;font-family:'Open Sans',sans-serif;font-size:.875em;line-height:1.5}html.color{background-color:transparent !important;color:#000 !important}header{text-align:center}h1,h2,h3,h4,h5,h6{font-weight:300}a{background:0;text-decoration:none}.link{display:inline-block;overflow:hidden;vertical-align:top;-webkit-perspective:600px;-moz-perspective:600px;-ms-perspective:600px;-o-perspective:600px;perspective:600px;-webkit-perspective-origin:50% 50%;-moz-perspective-origin:50% 50%;-ms-perspective-origin:50% 50%;-o-perspective-origin:50% 50%;perspective-origin:50% 50%}.link>span{display:block;position:relative;padding:0 .25em;-webkit-transition:all 400ms ease;-moz-transition:all 400ms ease;-ms-transition:all 400ms ease;-o-transition:all 400ms ease;transition:all 400ms ease;-webkit-transform-origin:50% 0;-moz-transform-origin:50% 0;-ms-transform-origin:50% 0;-o-transform-origin:50% 0;transform-origin:50% 0;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-ms-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d}.link:hover>span,.link:focus>span,.link:active>span{-webkit-transform:translate3d(0,0,-30px) rotateX(90deg);-moz-transform:translate3d(0,0,-30px) rotateX(90deg);-ms-transform:translate3d(0,0,-30px) rotateX(90deg);-o-transform:translate3d(0,0,-30px) rotateX(90deg);transform:translate3d(0,0,-30px) rotateX(90deg)}.link>span:after{content:attr(data-title);display:block;position:absolute;left:0;top:0;padding:0 .25em;color:#fff;-webkit-transform-origin:50% 0;-moz-transform-origin:50% 0;-ms-transform-origin:50% 0;-o-transform-origin:50% 0;transform-origin:50% 0;-webkit-transform:translate3d(0,105%,0) rotateX(-90deg);-moz-transform:translate3d(0,105%,0) rotateX(-90deg);-ms-transform:translate3d(0,105%,0) rotateX(-90deg);-o-transform:translate3d(0,105%,0) rotateX(-90deg);transform:translate3d(0,105%,0) rotateX(-90deg)}.link:hover>span,.link:focus>span,.link:active>span,.link>span:after{background:#4ea695}a,input[type="submit"],input[type="text"],.button{border:0;border-radius:2px;-webkit-transition:all .25s ease;-moz-transition:all .25s ease;-ms-transition:all .25s ease;-o-transition:all .25s ease;transition:all .25s ease;-webkit-appearance:none;-moz-appearance:none;appearance:none}input[type="submit"],.button{width:100%;display:block;padding:.5em;margin:0 0 .5em;font-size:1.5em;font-weight:300;text-align:center;color:#000 !important;color:rgba(0,0,0,0.25) !important}input[type="submit"]:hover,input[type="submit"]:focus,.button:hover,.button:focus{color:#fff !important}.button:active{-webkit-transform:translate(0,5px);-moz-transform:translate(0,5px);-ms-transform:translate(0,5px);-o-transform:translate(0,5px);transform:translate(0,5px)}hr{border-width:1px 0 0 0}p,li{font-size:.875em}pre,code{border-radius:2px;border:1px solid #ddd;background-color:#f8f8f8;background-color:rgba(248,248,248,0.8)}pre{padding:.75em 1em;font-size:.8125em;line-height:1.1875em;overflow:auto;margin:2em 0}code{margin:0 .125em;padding:0 .3125em;white-space:nowrap}form{position:relative;margin:1em 0}input[type="text"]{border:1px solid #ddd;background-color:#f8f8f8;background-color:rgba(248,248,248,0.8);padding:.5em;padding-right:27%;width:100%}input[type="text"]:focus{outline:0;border-color:transparent;box-shadow:0 0 5px #3bc4a8;box-shadow:0 0 5px hsl(168,54%,50%);background-color:#fff;background-color:rgba(255,255,255,0.8)}input[type="text"]:focus+input[type="submit"]{border-color:white}input[type="submit"]{border-radius:0 2px 2px 0;width:25%;height:100%;margin:0;position:absolute;top:0;right:0;border:1px solid #ddd;border-width:1px 1px 1px 0;font-size:1em}.text-only{background-color:transparent !important;border-color:transparent !important}.container{max-width:38em;padding:0 2em;margin:0 auto 5em}.title{font-size:4.5em;letter-spacing:1px}.subheading{font-size:2em;margin:1.5em 0 0}.links{margin:3em auto 0;text-align:center}.selector{color:#d55061}.keyword{color:#007fc9}.value{color:#009e73}.library{color:#e6ca00}.error{color:#d14}.truncate{position:relative;color:#888;margin:6em 0;font-style:italic}.truncate:before,.truncate:after{position:absolute;display:block;font-size:10em;font-family:'Nosifer',cursive;color:#dfdfdf;color:rgba(136,136,136,0.25)}.truncate:before{top:-0.75em;left:-0.15em;content:'\201C'}.truncate:after{bottom:-1.3em;right:.15em;content:'\201D'}.attribution{font-size:.75em;text-align:center}@media only screen and (min-width:542px){html{font-size:1em}.button{width:40%;display:inline-block;margin:0 .5em}}
 	</style>
-
-	<script>
-		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-20024456-12', 'micjamking.github.io');
-		ga('send', 'pageview');
-	</script>
 </head>
 <body>
 	<section class="container">
 		<header>
-			<h1>Succinct</h1>
-			<hr />
-			<p><em>A <span class="value">*</span>tiny jQuery plugin for truncating multiple lines of text.</em></p>
-			<hr />
+			<h1 class="title color text-only">Succinct</h1>
+			<hr class="color-light" />
+			<p><em>A <span class="text-only color">*</span>tiny jQuery plugin for truncating multiple lines of text.</em></p>
+			<hr class="color-light" />
 		</header>
 
 		<div class="links">
-			<a href="https://github.com/micjamking/Succinct/archive/master.zip" class="button">Download</a>
-			<a href="https://github.com/micjamking/Succinct" class="button" rel="nofollow">View on Github</a>
+			<a href="https://github.com/micjamking/Succinct/archive/master.zip" class="button color">Download</a>
+			<a href="https://github.com/micjamking/Succinct" class="button color" rel="nofollow">View on Github</a>
 		</div>
 
-		<h2>How does it work?</h2>
-		<hr />
+		<h2 class="subheading color text-only">How does it work?</h2>
+		<hr class="color-light" />
 		<p>Succinct shortens your text to a specified size, and then adds an ellipsis to the end.</p>
 
-		<h2>Demo</h2>
-		<hr />
+		<h2 class="subheading color text-only">Demo</h2>
+		<hr class="color-light" />
 		<form>
 			<input type="text" placeholder ="Enter Size: " />
-			<input type="submit" value="Go!" />
+			<input type="submit" value="Go!" class="color" />
 		</form>
 		<p class="truncate">I notice that you use plain, simple language, short words and brief sentences. That is the way to write English - it is the modern way and the best way. Stick to it; don't let fluff and flowers and verbosity creep in. When you catch an adjective, kill it. No, I don't mean utterly, but kill most of them - then the rest will be valuable. They weaken when they are close together. They give strength when they are wide apart. An adjective habit, or a wordy, diffuse, flowery habit, once fastened upon a person, is as hard to get. ~Mark Twain</p>
 
-		<h2>Usage</h2>
-		<hr />
+		<h2 class="subheading color text-only">Usage</h2>
+		<hr class="color-light" />
 		<p>Specify the elements that you would like to truncate as a selector, and then set the size parameter to the amount you would like to see.</p> 
 		<p>For example, if you would like to truncate all elements with a specific class, ie. <code>&lt;<span class="keyword">p</span> class="<span class="value">truncate</span>"&gt;</code> to 120 characters...</p>
 		<pre>
@@ -68,20 +61,28 @@
 &lt;/<span class="keyword">script</span>&gt;</pre>
 		<p>By default, the plugin truncates text to 240 characters.</p>
 
-		<h2>Details</h2>
-		<hr />
+		<h2 class="subheading color text-only">Details</h2>
+		<hr class="color-light" />
 		<ul>
 			<li>* Succinct is < 0.5kb minified</li>
-			<li>You'll need a copy of <a href="http://code.jquery.com/jquery-latest.min.js" target="_blank" rel="nofollow">jQuery</a> to run this plugin</li>
+			<li>You'll need a copy of <a href="http://code.jquery.com/jquery-latest.min.js" target="_blank" rel="nofollow" class="link color text-only"><span data-title="jQuery">jQuery</span></a> to run this plugin</li>
 		</ul>
 	</section>
 	<footer>
-		<p>&copy; 2013 // Mike King (<a href="http://twitter.com/micjamking">@micjamking</a>)</p>
+		<p class="attribution">&copy; 2013 // Mike King (<a href="http://twitter.com/micjamking" class="link color text-only"><span data-title="@micjamking">@micjamking</span></a>)</p>
 	</footer>
 	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="jQuery.succinct.min.js"></script>
 	<script>
-		$(function(){var a=$(".truncate").text();$("form").submit(function(c){c.preventDefault();$(".truncate").text(a);var b=$(this).find("[type=text]").val();if(isNaN(b)){$("form").after('<p class="error">Yo dude, numbers only!</p>');$(".error").hide().fadeIn();setTimeout(function(){$(".error").fadeOut(function(){$(this).remove()})},3500)}else{if(b==""){$("form").after('<p class="error">Did you enter something? Try again, with a number this time.</p>');$(".error").hide().fadeIn();setTimeout(function(){$(".error").fadeOut(function(){$(this).remove()})},3500)}else{$(".truncate").succinct({size:b})}}})});
+		$(function(){$("html").hide();var d=$(".truncate").text(),b=function(e){$("form").after(e);$(".error").hide().fadeIn();setTimeout(function(){$(".error").fadeOut(function(){$(this).remove()})},3500)},c=function(e){if(isNaN(e)){b('<p class="error">Yo dude, numbers only!</p>')}else{if(e===""){b('<p class="error">Did you enter something? Try again, with a number this time.</p>')}else{$(".truncate").succinct({size:e})}}},a=function(){var e=Math.floor(Math.random()*359),f="<style>.color {background-color: hsl("+e+", 36%, 48%);color: hsl("+e+", 36%, 48%);border-color: hsl("+e+", 36%, 48%);}.color-light {border-color: hsla("+e+", 100%, 48%,0.75);}.link:hover > span,.link:focus > span,.link:active > span,.link > span:after {background: hsl("+e+', 36%, 48%);}input[type="submit"]:hover,input[type="submit"]:focus,.button:hover,.button:focus{background-color: hsl('+e+', 36%, 43%);}input[type="text"]:focus{box-shadow: 0 0 5px hsl('+e+", 54%, 50%);}</style>";$("head").append($(f))};$("form").submit(function(f){f.preventDefault();$(".truncate").text(d);c($(this).find("[type=text]").val())});a();$("html").fadeIn(1000)});
+	</script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-20024456-12', 'micjamking.github.io');
+		ga('send', 'pageview');
 	</script>
 </body>
 </html>
