@@ -9,50 +9,50 @@
 
  /*global jQuery*/
 (function($){
-    'use strict';
+	'use strict';
 
-    $.fn.succinct = function(options){
+	$.fn.succinct = function(options){
 
-        var defaults = {
-                size: 240,
-                omission: '...',
-                ignore: true
-            },
-            options = $.extend(defaults, options);
+		var defaults = {
+				size: 240,
+				omission: '...',
+				ignore: true
+			},
+			options = $.extend(defaults, options);
 
-        return this.each(function(){
+		return this.each(function(){
 
-            var textDefault,
-                textTruncated,
-                elements = $(this),
-                regex    = /[!-\/:-@\[-`{-~]$/;
+			var textDefault,
+				textTruncated,
+				elements = $(this),
+				regex    = /[!-\/:-@\[-`{-~]$/;
 
-            var truncate = function(){
+			var truncate = function(){
 
-                elements.each(function(){
-                    textDefault = $(this).text();
+				elements.each(function(){
+					textDefault = $(this).text();
 
-                    if (textDefault.length > options.size) {
-                        textTruncated = $.trim(textDefault).
-                                        substring(0, options.size).
-                                        split(' ').
-                                        slice(0, -1).
-                                        join(' ');
+					if (textDefault.length > options.size) {
+						textTruncated = $.trim(textDefault).
+										substring(0, options.size).
+										split(' ').
+										slice(0, -1).
+										join(' ');
 
-                        if (options.ignore) {
-                            textTruncated = textTruncated.replace( regex , '' );
-                        }
+						if (options.ignore) {
+							textTruncated = textTruncated.replace( regex , '' );
+						}
 
-                        $(this).text(textTruncated + options.omission);
-                    }
-                });
-            };
+						$(this).text(textTruncated + options.omission);
+					}
+				});
+			};
 
-            var init = function() {
-                truncate();
-            };
+			var init = function() {
+				truncate();
+			};
 
-            init();
-        });
-    };
+			init();
+		});
+	};
 })(jQuery);
