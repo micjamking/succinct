@@ -24,6 +24,18 @@ For example, if you would like to truncate all elements with a specific class, i
 ```
 By default, the plugin truncates text to 240 characters.
 
+There's also an option to specify the omission string that gets appended to the end. For example, to change the ellipsis to an HTML unicode arrow "&rarr;"...
+
+```
+<script>
+    $(function(){
+        $('.truncate').succinct({
+            omission: '&rarr;'
+        });
+    });
+</script>
+```
+
 ##Details
 * * Succinct is < 0.5kb minified
 * You'll need a copy of [jQuery](http://code.jquery.com/jquery-latest.min.js) to run this plugin
