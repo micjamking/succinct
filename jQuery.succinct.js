@@ -14,7 +14,8 @@
 	$.fn.succinct = function(size){
 
 		var defaults = {
-				size: 240
+				size: 240,
+				omission: '...'
 			},
 			options = $.extend(defaults, size);
 
@@ -32,7 +33,7 @@
 					if (textDefault.length > options.size) {
 						textTruncated = $.trim(textDefault).
 										substring(0, options.size).split(' ').
-										slice(0, -1).join(' ') + '...';
+										slice(0, -1).join(' ') + options.omission;
 
 						$(this).text(textTruncated);
 					}
