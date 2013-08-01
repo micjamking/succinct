@@ -24,13 +24,25 @@ For example, if you would like to truncate all elements with a specific class, i
 ```
 By default, the plugin truncates text to 240 characters.
 
-There's also an option to specify the omission string that gets appended to the end. For example, to change the ellipsis to an HTML unicode arrow "&rarr;"...
+To change the ellipsis to an HTML unicode arrow "&rarr;"...
 
 ```
 <script>
     $(function(){
         $('.truncate').succinct({
             omission: '&rarr;'
+        });
+    });
+</script>
+```
+
+By default, the plugin also removes the set of 32 ASCII special characters at the end of words, ie. `! " # $` and so on. To disable this behavior...
+
+```
+<script>
+    $(function(){
+        $('.truncate').succinct({
+            ignore: false
         });
     });
 </script>
