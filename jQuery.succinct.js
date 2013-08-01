@@ -8,9 +8,9 @@
  */
 
  /*global jQuery*/
-'use strict';
-
 (function($){
+	'use strict';
+
 	$.fn.succinct = function(size){
 
 		var defaults = {
