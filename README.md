@@ -49,7 +49,7 @@ By default, the plugin also removes the set of 32 ASCII special characters at th
 ```
 
 ##Details
-* * Succinct is < 0.5kb minified
+* * Succinct is < 0.6kb minified
 * You'll need a copy of [jQuery](http://code.jquery.com/jquery-latest.min.js) to run this plugin
 * If you have any suggestions, comments, or creative insults for my code, [add an issue](https://github.com/micjamking/succinct/issues/new) or [fork the repo](https://github.com/micjamking/succinct/fork).
 
