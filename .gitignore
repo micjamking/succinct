@@ -1,0 +1,13 @@
+# Ignore patterns for jQuery Succinct plugin
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Project Specific
+script.js
+style.css
