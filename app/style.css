@@ -161,6 +161,10 @@ input[type="submit"]:focus,
     color: #fff !important;
 }
 
+.button {
+    background-color: rgba(0,0,0,0.15);
+}
+
 .button:active {
     -webkit-transform: translate(0,5px);
     -moz-transform: translate(0,5px);
@@ -172,10 +176,6 @@ input[type="submit"]:focus,
 hr {
     border-width: 1px 0 0 0;
 }
-
-/* p,li {
-    font-size: .875em;
-} */
 
 pre,code {
     border-radius: 2px;
@@ -343,7 +343,7 @@ input[type="submit"] {
 
     .header { 
         position: fixed;
-        z-index: 1;  /* sets it below the other slides in the layer stack */
+        z-index: 1;
         height: 100%;
         width: 100%;
         top: 0;
