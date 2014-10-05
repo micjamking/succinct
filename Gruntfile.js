@@ -22,10 +22,19 @@ module.exports = function(grunt) {
     copy: {
       plugin: {
         expand: true,
-        dest: 'dist/',
+        dest: 'plugin/',
         src: [
           'jQuery.succinct.js',
           'bower.json',
+          'README.md',
+          'LICENSE'
+        ]
+      },
+      app: {
+        expand: true,
+        dest: 'dist/',
+        src: [
+          'app/index.html',
           'README.md',
           'LICENSE'
         ]
@@ -37,7 +46,13 @@ module.exports = function(grunt) {
       plugin: {
         files: [{
           dot: true,
-          src: 'dist/{,*/}*.*'
+          src: 'plugin'
+        }]
+      },
+      app: {
+        files: [{
+          dot: true,
+          src: 'dist'
         }]
       }
     },
@@ -45,9 +60,14 @@ module.exports = function(grunt) {
       options: {
         preserveComments: 'all'
       },
-      target: {
+      plugin: {
         files: {
-          'dist/jQuery.succinct.min.js': ['dist/jQuery.succinct.js']
+          'plugin/jQuery.succinct.min.js': ['plugin/jQuery.succinct.js']
+        }
+      },
+      app: {
+        files: {
+          'dist/jQuery.succinct.min.js': ['jQuery.succinct.js']
         }
       }
     },
@@ -80,6 +100,16 @@ module.exports = function(grunt) {
       },
       all: [ 'Gruntfile.js', 'jQuery.succinct.js' ]
     },
+    cssmin: {
+      app: {
+        files: [{
+          expand: true,
+          cwd: 'app/',
+          src: ['*.css', '!*.min.css'],
+          dest: 'dist/'
+        }]
+      }
+    },
     buildcontrol: {
       options: {
         commit: true,
@@ -88,13 +118,14 @@ module.exports = function(grunt) {
       },
       plugin: {
         options: {
-          dir: 'dist',
+          dir: 'plugin',
           remote: 'git@github.com:micjamking/succinct.git',
           branch: 'master'
         }
       },
       app: {
         options: {
+          dir: 'dist',
           remote: 'git@github.com:micjamking/succinct.git',
           branch: 'gh-pages'
         }
@@ -114,14 +145,24 @@ module.exports = function(grunt) {
     'jshint',
     'copy',
     'uglify',
-//     'buildcontrol'
+    'cssmin',
+    'buildcontrol'
   ]);
 
   grunt.registerTask('deploy-app', [
+    'clean:app',
+    'jshint',
+    'copy:app',
+    'uglify:app',
+    'cssmin:app',
     'buildcontrol:app'
   ]);
 
   grunt.registerTask('deploy-plugin', [
+    'clean:plugin',
+    'jshint',
+    'copy:plugin',
+    'uglify:plugin',
     'buildcontrol:plugin'
   ]);
 

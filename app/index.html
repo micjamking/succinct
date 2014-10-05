@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" class="color">
+<head>
+	<title>Succinct: A tiny jQuery plugin for truncating multiple lines of text</title>
+
+	<meta charset="UTF-8" />
+  	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="initial-scale=1.0, width=device-width, maximum-scale=1.0, user-scalable=no" />
+
+	<meta name="author"      content="Mike King" />
+	<meta name="description" content="Succinct is a tiny jQuery plugin for truncating multiple lines of text." />
+	<meta name="keywords"    content="jQuery, javascript, html, code, plugin, snippet, text, copy, truncate, shorten, succinct, multiple lines, ellipsis" />
+
+	<link rel="author"     href="https://plus.google.com/112398162809101288990/posts" />
+	<link rel="publisher"  href="https://plus.google.com/u/0/112398162809101288990/posts" />
+
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/normalize/2.1.0/normalize.css" />
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400|Nosifer" />
+	<link rel="stylesheet" href="style.css" />
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-20024456-12', 'micjamking.github.io');
+		ga('send', 'pageview');
+	</script>
+</head>
+<body>
+	<header class="header">
+		<section class="container">
+			<h1 class="title">Succinct</h1>
+			<hr class="color-light" />
+			<p><em>A <span>*</span>tiny jQuery plugin for truncating multiple lines of text.</em></p>
+			<hr class="color-light" />
+
+			<div class="links">
+				<a href="https://github.com/micjamking/Succinct/archive/master.zip" onClick="_gaq.push(['_trackEvent', 'Code', 'Download', 'Source Code']);" class="button color">Download</a>
+				<a href="https://github.com/micjamking/Succinct" class="button color" rel="nofollow">View on Github</a>
+			</div>
+		</section>
+	</header>
+
+	<section class="main">
+		<section class="container">
+
+			<h2 class="subheading color text-only">How does it work?</h2>
+	<!-- 		<hr class="color-light" /> -->
+			<p>Succinct shortens your text to a specified size, and then adds an ellipsis to the end.</p>
+
+			<h2 class="subheading color text-only">Demo</h2>
+	<!-- 		<hr class="color-light" /> -->
+			<form>
+				<input type="text" placeholder ="Enter Size: " />
+				<input type="submit" value="Go!" class="color" />
+			</form>
+			<p class="truncate">I notice that you use plain, simple language, short words and brief sentences. That is the way to write English - it is the modern way and the best way. Stick to it; don't let fluff and flowers and verbosity creep in. When you catch an adjective, kill it. No, I don't mean utterly, but kill most of them - then the rest will be valuable. They weaken when they are close together. They give strength when they are wide apart. An adjective habit, or a wordy, diffuse, flowery habit, once fastened upon a person, is as hard to get. ~Mark Twain</p>
+
+			<h2 class="subheading color text-only">Usage</h2>
+	<!-- 		<hr class="color-light" /> -->
+			<p>Specify the elements that you would like to truncate as a selector, and then set the size parameter to the amount you would like to see.</p> 
+			<p>For example, if you would like to truncate all elements with a specific class, ie. <code>&lt;<span class="keyword">p</span> class="<span class="value">truncate</span>"&gt;</code> to 120 characters...</p>
+			<pre>
+&lt;<span class="keyword">script</span>&gt;
+  <span class="library">$</span>(<span class="keyword">function</span>()<span class="keyword">{</span>
+    <span class="library">$</span>(<span class="selector">'.truncate'</span>).succinct(<span class="keyword">{</span>
+      size: <span class="value">120</span>
+    <span class="keyword">}</span>);
+  <span class="keyword">}</span>);
+&lt;/<span class="keyword">script</span>&gt;</pre>
+			<p>By default, the plugin truncates text to 240 characters.</p>
+
+			<h2 class="subheading color text-only">Details</h2>
+	<!-- 		<hr class="color-light" /> -->
+			<ul>
+				<li>* Succinct is < 0.6kb minified</li>
+				<li>You'll need a copy of <a href="http://code.jquery.com/jquery-latest.min.js" target="_blank" rel="nofollow" class="link color text-only"><span data-title="jQuery">jQuery</span></a> to run this plugin</li>
+			</ul>
+		</section>
+		<footer>
+			<p class="attribution">&copy; 2014 // Mike King (<a href="http://twitter.com/micjamking" class="link color text-only"><span data-title="@micjamking">@micjamking</span></a>)</p>
+		</footer>
+	</section>
+
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script src="jQuery.succinct.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
