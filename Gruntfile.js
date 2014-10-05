@@ -79,6 +79,26 @@ module.exports = function(grunt) {
         }
       },
       all: [ 'Gruntfile.js', 'jQuery.succinct.js' ]
+    },
+    buildcontrol: {
+      options: {
+        commit: true,
+        push: true,
+        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
+      },
+      plugin: {
+        options: {
+          dir: 'dist',
+          remote: 'git@github.com:micjamking/succinct.git',
+          branch: 'master'
+        }
+      },
+      app: {
+        options: {
+          remote: 'git@github.com:micjamking/succinct.git',
+          branch: 'gh-pages'
+        }
+      }
     }
   });
 
@@ -93,7 +113,16 @@ module.exports = function(grunt) {
     'clean',
     'jshint',
     'copy',
-    'uglify'
+    'uglify',
+//     'buildcontrol'
+  ]);
+
+  grunt.registerTask('deploy-app', [
+    'buildcontrol:app'
+  ]);
+
+  grunt.registerTask('deploy-plugin', [
+    'buildcontrol:plugin'
   ]);
 
 };
