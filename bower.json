@@ -1,6 +1,6 @@
 {
 	"name": "succinct",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"homepage": "https://github.com/micjamking/succinct",
 	"description": "A tiny jQuery plugin for truncating multiple lines of text"
 }
