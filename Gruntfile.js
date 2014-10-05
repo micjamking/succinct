@@ -17,8 +17,20 @@ module.exports = function(grunt) {
         tasks: ['newer:jshint:all']
       }
     },
-
-    // Copies remaining files
+    clean: {
+      plugin: {
+        files: [{
+          dot: true,
+          src: 'plugin'
+        }]
+      },
+      app: {
+        files: [{
+          dot: true,
+          src: 'dist'
+        }]
+      }
+    },
     copy: {
       plugin: {
         expand: true,
@@ -39,20 +51,11 @@ module.exports = function(grunt) {
         ]
       }
     },
-
-    // Empties folders to start fresh
-    clean: {
-      plugin: {
-        files: [{
-          dot: true,
-          src: 'plugin'
-        }]
-      },
+    cssmin: {
       app: {
-        files: [{
-          dot: true,
-          src: 'dist'
-        }]
+        files: {
+          'dist/style.min.css': 'app/style.css'
+        }
       }
     },
     uglify: {
@@ -66,8 +69,8 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          'dist/jQuery.succinct.min.js': ['jQuery.succinct.js'],
-          'dist/script.min.js': ['app/script.js']
+          'dist/jQuery.succinct.min.js': 'jQuery.succinct.js',
+          'dist/script.min.js': 'app/script.js'
         }
       }
     },
@@ -99,16 +102,6 @@ module.exports = function(grunt) {
         }
       },
       all: [ 'Gruntfile.js', 'jQuery.succinct.js' ]
-    },
-    cssmin: {
-      app: {
-        files: [{
-          expand: true,
-          cwd: 'app/',
-          src: ['*.css', '!*.min.css'],
-          dest: 'dist/'
-        }]
-      }
     },
     buildcontrol: {
       options: {
