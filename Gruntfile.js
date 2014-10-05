@@ -66,7 +66,7 @@ module.exports = function(grunt) {
       },
       app: {
         files: {
-          'dist/jQuery.succinct.min.js': ['jQuery.succinct.js']
+          'dist/jQuery.succinct.min.js': ['jQuery.succinct.js'],
           'dist/script.min.js': ['app/script.js']
         }
       }
