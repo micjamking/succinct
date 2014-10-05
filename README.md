@@ -13,7 +13,7 @@ Live Demo: http://micjamking.github.io/succinct/
 Specify the elements that you would like to truncate as a selector, and then set the size parameter to the amount you would like to see.
 For example, if you would like to truncate all elements with a specific class, ie. `<p class="truncate">` to 120 characters...
 
-```
+```html
 <script>
     $(function(){
         $('.truncate').succinct({
@@ -26,7 +26,7 @@ By default, the plugin truncates text to 240 characters.
 
 To change the ellipsis to an HTML unicode arrow "&rarr;"...
 
-```
+```html
 <script>
     $(function(){
         $('.truncate').succinct({
@@ -38,7 +38,7 @@ To change the ellipsis to an HTML unicode arrow "&rarr;"...
 
 By default, the plugin also removes the set of 32 ASCII special characters at the end of words, ie. `! " # $` and so on. To disable this behavior...
 
-```
+```html
 <script>
     $(function(){
         $('.truncate').succinct({
