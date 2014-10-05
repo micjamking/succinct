@@ -13,12 +13,11 @@
 
 	$.fn.succinct = function(options) {
 
-		var defaults = {
+		var settings = $.extend({
 				size: 240,
 				omission: '...',
 				ignore: true
-			},
-			options = $.extend(defaults, options);
+			}, options);
 
 		return this.each(function() {
 
@@ -30,14 +29,18 @@
 					elements.each(function() {
 						textDefault = $(this).html();
 
-						if (textDefault.length > options.size) {
-							textTruncated = $.trim(textDefault).substring(0, options.size).split(' ').slice(0, -1).join(' ');
+						if (textDefault.length > settings.size) {
+							textTruncated = $.trim(textDefault)
+											.substring(0, settings.size)
+											.split(' ')
+											.slice(0, -1)
+											.join(' ');
 
-							if (options.ignore) {
+							if (settings.ignore) {
 								textTruncated = textTruncated.replace(regex, '');
 							}
 
-							$(this).html(textTruncated + options.omission);
+							$(this).html(textTruncated + settings.omission);
 						}
 					});
 				};

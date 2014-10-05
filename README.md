@@ -51,7 +51,7 @@ By default, the plugin also removes the set of 32 ASCII special characters at th
 ##Details
 * * Succinct is < 0.6kb minified
 * You'll need a copy of [jQuery](http://code.jquery.com/jquery-latest.min.js) to run this plugin
-* If you have any suggestions, comments, or creative insults for my code, [add an issue](https://github.com/micjamking/succinct/issues/new) or [fork the repo](https://github.com/micjamking/succinct/fork).
+* Suggestions, comments, or creative insults: [add an issue](https://github.com/micjamking/succinct/issues/new) or [fork the repo](https://github.com/micjamking/succinct/fork).
 
 ###Copyright
-[MIT license](http://opensource.org/licenses/MIT) Copyright (c) 2013 Mike King ([@micjamking](http://twitter.com/micjamking))
+[MIT license](http://opensource.org/licenses/MIT) Copyright (c) 2014 Mike King ([@micjamking](http://twitter.com/micjamking))

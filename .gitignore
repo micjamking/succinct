@@ -8,6 +8,11 @@ Icon
 .Spotlight-V100
 .Trashes
 
+# Build Process
+node_modules
+dist
+
 # Project Specific
 script.js
 style.css
+index.html
