@@ -35,9 +35,7 @@ module.exports = function(grunt) {
         cwd: 'app/',
         dest: 'dist/',
         src: [
-          'index.html',
-          '../README.md',
-          '../LICENSE'
+          'index.html'
         ]
       }
     },
@@ -69,6 +67,7 @@ module.exports = function(grunt) {
       app: {
         files: {
           'dist/jQuery.succinct.min.js': ['jQuery.succinct.js']
+          'dist/script.min.js': ['app/script.js']
         }
       }
     },
