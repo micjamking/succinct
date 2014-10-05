@@ -32,11 +32,12 @@ module.exports = function(grunt) {
       },
       app: {
         expand: true,
+        cwd: 'app/',
         dest: 'dist/',
         src: [
-          'app/index.html',
-          'README.md',
-          'LICENSE'
+          'index.html',
+          '../README.md',
+          '../LICENSE'
         ]
       }
     },
