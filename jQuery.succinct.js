@@ -16,7 +16,8 @@
 		var settings = $.extend({
 				size: 240,
 				omission: '...',
-				ignore: true
+				ignore: true,
+				onTruncated: function(originalText){}
 			}, options);
 
 		return this.each(function() {
@@ -41,6 +42,7 @@
 							}
 
 							$(this).html(textTruncated + settings.omission);
+							settings.onTruncated.call(this, textDefault);
 						}
 					});
 				};
