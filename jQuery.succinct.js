@@ -27,7 +27,7 @@
 				regex    = /[!-\/:-@\[-`{-~]$/,
 				init     = function() {
 					elements.each(function() {
-						textDefault = $(this).html();
+						textDefault = $(this).html().trim();
 
 						if (textDefault.length > settings.size) {
 							textTruncated = $.trim(textDefault)
