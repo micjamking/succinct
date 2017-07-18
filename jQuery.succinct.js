@@ -32,9 +32,15 @@
 						if (textDefault.length > settings.size) {
 							textTruncated = $.trim(textDefault)
 											.substring(0, settings.size)
-											.split(' ')
-											.slice(0, -1)
-											.join(' ');
+											.split(' ');
+
+							if (textTruncated.length === 1) {
+								textTruncated = textTruncated.slice(0);
+							} else {
+								textTruncated = textTruncated.slice(0, -1);
+							}
+
+							textTruncated = textTruncated.join(' ');
 
 							if (settings.ignore) {
 								textTruncated = textTruncated.replace(regex, '');
